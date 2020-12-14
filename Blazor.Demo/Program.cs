@@ -17,6 +17,8 @@ namespace Blazor.Demo
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             builder.Services.AddScoped<IWeatherProvider, WeatherProvider>();
             builder.Services.AddScoped<ILoginProcessor, LoginProcessor>();
+            builder.Services.AddScoped<IDotnetToJavascript, DotnetToJavascript>();
+            builder.Services.AddScoped<AddressProvider>();
 
             await builder.Build().RunAsync();
         }
